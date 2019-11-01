@@ -3,15 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WebApp Dashboard</title>
+        <!-- <title>WebApp Dashboard</title> -->
+        <title>Rental Home Dashboard</title>
         <link href="css/normalize.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
+        <link href="css/toggle-switch.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="grid-container">
         <div class="container">
             <div class="col notifications">1 
-                <h2><strong>Your</strong>App</h2>
+                <!-- <h2><strong>Your</strong>App&trade;</h2> -->
+                <h2><strong>Your</strong>App&trade;</h2>
                 <div class="notification-bar">
                     <img src="icons/icon-bell.svg" alt="bell icon" class="bell-icon">
                     <!-- <img src="images/member-1.jpg" alt="profile picture" class="profile-pic" /> -->
@@ -21,191 +24,290 @@
                 <p>Josh Sullivan</p>
             </div>
             <div class="col navigation">2
-                <img src="icons/icon-dashboard.svg" alt="dashboard icon" class="dashboard-img">
-                <img src="icons/icon-members.svg" alt="members icon" class="members-img">
-                <img src="icons/icon-visits.svg" alt="visits icon" class="visits-img">
-                <img src="icons/icon-settings.svg" alt="settings icon" class="settings-img">
+                <a><img src="icons/icon-dashboard.svg" alt="dashboard icon" class="dashboard-img"></a>
+                <a><img src="icons/icon-members.svg" alt="members icon" class="members-img"></a>
+                <a><img src="icons/icon-visits.svg" alt="visits icon" class="visits-img"></a>
+                <a><img src="icons/icon-settings.svg" alt="settings icon" class="settings-img"></a>
             </div>
-            <div class="col dashboard">3
-                <h3>Dashboard</h3>
-                <input type="text" placeholder="Search">
-                <div class="alert">
-                    <p>Alert: Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <span class="close">X</span>
+            <div class="main">
+                <div class="col dashboard">3
+                    <h2>Dashboard</h2>
+                    <!-- <input type="text" placeholder="Search"> -->
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <!-- <div class="alert">
+                        <p>Alert: Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <span class="close">X</span>
+                    </div> -->
+
+
+                    <!-- Insert Rental Map with Property picture to the right -->
+                    <div id="alert2" class="alert2"></div>
                 </div>
-            </div>
-            <!-- <div class="alert">
-                <p>Alert:</p>
-            </div> -->
-            <div class="col general-traffic">4
-                <!-- <h5>TRAFFIC</h5> -->
-                <canvas id="line-graph" width="400" height="200"></canvas>
-            </div>
-            <div class="col daily-traffic">5
-                <!-- <h5>DAILY TRAFFIC</h5> -->
-                <canvas id="bar-graph" width="400" height="200"></canvas>
-            </div>
-            <div class="col mobile-users">6
-                <!-- <h5>MOBILE USERS</h5> -->
-                <canvas id="doughnut" width="400" height="200"></canvas>
-            </div>
-            <div class="col social-stats">7
-                <div class="cards">
-                    <div class="svg">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <svg class="twitter-icon icons" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                            <path fill="white" d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
-                                c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
-                                c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
-                                c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
-                                c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
-                        </svg>
+                <!-- <div id="alert2" class="alert2"></div> -->
+                <section class="traffic">
+                    <div class="col general-traffic">4
+                        <h3>TRAFFIC</h3>
+                        <!-- price or views over the past year. Change hourly to today -->
+                        <ul class="trafic-nav">
+                            <li class="trafic-nav-link">Hourly</li>
+                            <li class="trafic-nav-link">Daily</li>
+                            <li class="trafic-nav-link active">Weekly</li>
+                            <li class="trafic-nav-link">Monthly</li>
+                        </ul>
+                        <div class="widget-container-full">
+
+                            <canvas id="traffic-chart" width="400" height="200"></canvas>
+                        </div>
                     </div>
-                    <div class="stats">
-                        <p>Twitter</p>
-                        <p>10,345</p>
+                </section>
+                <section class="daily">
+                    <div class="col daily-traffic">5
+                        <h3>DAILY TRAFFIC</h3>
+                        <!-- price of views over the past week -->
+                        <div class="widget-container-half">
+                    
+                            <canvas id="daily-chart" width="400" height="200"></canvas>
+                        </div>
                     </div>
-                </div>
-                <div class="cards">
-                    <div class="svg">
-                        <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-                        <svg class="facebook-icon icons" enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
-                        </svg>
+                </section>
+                <section class="mobile">
+                    <div class="col mobile-users">6
+                        <h3>MOBILE USERS</h3>
+
+                        <div class="widget-container-half">
+
+                            <canvas id="mobile-chart" width="400" height="200"></canvas>
+                        </div>
                     </div>
-                    <div class="stats">
-                        <p>Facebook</p>
-                        <p>8,739</p>
+                </section>
+                <div class="col social-stats">7
+                    <!-- Which platform the property has been shared. Your Social Stats -->
+                    <div class="cards">
+                        <div class="social-img">
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg class="twitter-icon icons" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <path fill="white" d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+                                    c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+                                    c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+                                    c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+                                    c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
+                            </svg>
+                        </div>
+                        <div class="stats">
+                            <p>Twitter</p>
+                            <p>10,345</p>
+                        </div>
                     </div>
-                </div>
-                <div class="cards">
-                    <div class="svg">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <svg class="google-icon icons" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                            <path fill="white" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
-                            c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
-                            c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
-                            c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
-                            c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
-                            c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
-                            c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
-                            c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
-                            c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
-                            c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
-                            c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
-                            c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
-                            c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
-                            c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
-                            c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
-                            h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
-                        </svg>
+                    <div class="cards">
+                        <div class="social-img">
+                            <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+                            <svg class="facebook-icon icons" enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
+                            </svg>
+                        </div>
+                        <div class="stats">
+                            <p>Facebook</p>
+                            <p>8,739</p>
+                        </div>
                     </div>
-                    <div class="stats">
-                        <p>Google</p>
-                        <p>2,530</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col new-members">8
-                <h5>NEW MEMBERS</h5>
-            <div class="activity">
-                <div class="contact-img">
-                <img src="images/member-1.jpg" alt="first new member" class="first-member">
-                <div class="contact-info">
-                    <h4>Victoria Chambers</h4>
-                    <p>victoria.chambers80@example.com</p>
-                </div>  
-                <p class="date">10/15/15</p>
-                </div>
-                <div class="contact-img">
-                    <img src="images/member-2.jpg" alt="second new member" class="second-member">
-                    <div class="contact-info">
-                    <h4>Dale Byrd</h4>
-                    <p>dale.byrd52@example.com</p>
-                    </div>
-                    <p class="date">10/15/15</p>
-                </div>
-                <div class="contact-img">
-                    <img src="images/member-3.jpg" alt="third new member" class="third-member">
-                    <div class="contact-info">
-                    <h4>Dawn Wood</h4>
-                    <p>dawn.wood16@example.com</p>
-                    </div>
-                    <p class="date">10/15/15</p>
-                </div>
-                <div class="contact-img">
-                    <img src="images/member-4.jpg" alt="fourth new member" class="fourth-member">
-                    <div class="contact-info">
-                    <h4>Dan Oliver</h4>
-                    <p>dan.oliver82@example.com</p>
-                    </div>
-                    <p class="date">10/15/15</p>
-                    </div>
-            </div></div>
-            <div class="col recent-activity">9
-                <h5>RECENT ACTIVITY</h5>
-                <div class="activity">
-                <div class="contact-img">
-                    <img src="images/member-1.jpg" alt="first-member">
-                    <div class="contact-info">
-                    <p>Victoria Chambers commented on YourApp's SEO Tips</p>
-                    <p>4 hours ago</p>
+                    <div class="cards">
+                        <div class="social-img">
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg class="google-icon icons" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <path fill="white" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+                                c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+                                c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+                                c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+                                c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+                                c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+                                c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+                                c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+                                c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+                                c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+                                c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+                                c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+                                c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+                                c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+                                c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+                                h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
+                            </svg>
+                        </div>
+                        <div class="stats">
+                            <p>Google</p>
+                            <p>2,530</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-img">
-                    <img src="images/member-2.jpg" alt="second-member">
-                    <div class="contact-info">
-                    <p>Dale Byrd like the post Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
-                    </div> 
-                </div>
-                <div class="contact-img">
-                    <img src="images/member-3.jpg" alt="third-member">
-                    <div class="contact-info">
-                    <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
+                <section class="col new-members">8
+                    <h3>NEW MEMBERS</h3>
+                    <!-- Real estate agents -->
+                    <div class="activity">
+                        <!-- <div class="contact-img">
+                        <img src="images/member-1.jpg" alt="first new member" class="first-member">
+                        <div class="contact-info">
+                            <h4>Victoria Chambers</h4>
+                            <p>victoria.chambers80@example.com</p>
+                        </div>  
+                        <p class="date">10/15/15</p>
+                        </div> -->
+                        <div class="contact-img">
+                            <img src="images/member-1.jpg" alt="first new member" class="first-member">
+                            <div class="contact-info">
+                                <h4>Victoria Chambers</h4>
+                                <a href="#">victoria.chambers80@example.com</a>
+                            </div>  
+                            <p class="date">10/15/15</p>
+                        </div>
+                        <!-- <div class="contact-img">
+                            <img src="images/member-2.jpg" alt="second new member" class="second-member">
+                            <div class="contact-info">
+                            <h4>Dale Byrd</h4>
+                            <p>dale.byrd52@example.com</p>
+                            </div>
+                            <p class="date">10/15/15</p>
+                        </div> -->
+                        <div class="contact-img">
+                            <img src="images/member-2.jpg" alt="second new member" class="second-member">
+                            <div class="contact-info">
+                                <h4>Dale Byrd</h4>
+                                <a href="#">dale.byrd52@example.com</a>
+                            </div>
+                            <p class="date">10/15/15</p>
+                        </div>
+                        <!-- <div class="contact-img">
+                            <img src="images/member-3.jpg" alt="third new member" class="third-member">
+                            <div class="contact-info">
+                            <h4>Dawn Wood</h4>
+                            <p>dawn.wood16@example.com</p>
+                            </div>
+                            <p class="date">10/15/15</p>
+                        </div> -->
+                        <div class="contact-img">
+                            <img src="images/member-3.jpg" alt="third new member" class="third-member">
+                            <div class="contact-info">
+                                <h4>Dawn Wood</h4>
+                                <a href="#">dawn.wood16@example.com</a>
+                            </div>
+                            <p class="date">10/15/15</p>
+                        </div>
+                        <!-- <div class="contact-img">
+                            <img src="images/member-4.jpg" alt="fourth new member" class="fourth-member">
+                            <div class="contact-info">
+                            <h4>Dan Oliver</h4>
+                            <p>dan.oliver82@example.com</p>
+                            </div>
+                            <p class="date">10/15/15</p>
+                            </div>
+                        </div> -->
+                        <div class="contact-img">
+                            <img src="images/member-4.jpg" alt="fourth new member" class="fourth-member">
+                            <div class="contact-info">
+                                <h4>Dan Oliver</h4>
+                                <a href="#">dan.oliver82@example.com</a>
+                            </div>
+                            <p class="date">10/15/15</p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-img">
-                    <img src="images/member-4.jpg" alt="fourth-member">
-                    <div class="contact-info">
-                    <p>Dan Oliver posted YourApp's SEO Tips</p>
-                    <p>1 day ago</p>
+                </section>
+                <section class="col recent-activity">9
+                    <h3>RECENT ACTIVITY</h3>
+                    <!-- review of real estate agents -->
+                    <div class="activity">
+                        <div class="contact-img">
+                            <img src="images/member-1.jpg" alt="first-member">
+                            <div class="contact-info">
+                                <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                                <p>4 hours ago</p>
+                            </div>
+                            <p>></p>
+                        </div>
+                        <div class="contact-img">
+                            <img src="images/member-2.jpg" alt="second-member">
+                            <div class="contact-info">
+                                <p>Dale Byrd like the post Facebook's Changes for 2016</p>
+                                <p>5 hours ago</p>
+                            </div> 
+                            <p>></p>
+                        </div>
+                        <div class="contact-img">
+                            <img src="images/member-3.jpg" alt="third-member">
+                            <div class="contact-info">
+                                <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                                <p>5 hours ago</p>
+                            </div>
+                            <p>></p>
+                        </div>
+                        <div class="contact-img">
+                            <img src="images/member-4.jpg" alt="fourth-member">
+                            <div class="contact-info">
+                                <p>Dan Oliver posted YourApp's SEO Tips</p>
+                                <p>1 day ago</p>
+                            </div>
+                            <p>></p>
+                        </div>
                     </div>
-                </div>
-                </div>
-            </div>
-            <div class="col message-user">10
-                <label for="messages">MESSAGE USER</label>
-                <input type="text" placeholder="Search for User">
-                <textarea id="messages" name="messages" placeholder="Message for User"></textarea>
-                <button type="submit" class="send-bttn">SEND</button>
-            </div>
-            <div class="col personal-settings">11
-                <label>SETTINGS</label>
-                <div class="sets">
-                <div class="preference">
-                    <label for="email-notifications">Send Email Notifications</label><input type="checkbox" id="email-notifications" name="email-notifications">
-                </div>
-                <div class="2-preference">
-                    <label for="profile-settings">Set Profile to Public</label><input type="checkbox" id="profile-settings" name="profile-settings">
-                </div>
-                <select>
-                    <option value="" disabled="" selected="">Select Timezone</option>
-                    <option value="EST">EST</option>
-                    <option value="PST">PST</option>
-                    <option value="MNT">MNT</option>
-                </select>
-                </div>
-                <div class="settings-bttn">
-                    <button class="save-bttn" type="submit">SAVE</button>
-                    <button type="submit" class="cancel-bttn">CANCEL</button>
-                </div>
-            </div>       
+                </section>
+                <section class="col message-user">10
+                    <h3>MESSAGE USER</h3>
+                    <!-- Connect with an agent -->
+                    <form class="widget-container">
+                        <input type="text" placeholder="Search for User" class="form-field" id="user-field">
+                        <textarea id="messages" class="form-area" placeholder="Message for User"></textarea>
+                        <button class="send-bttn" id="send">SEND</button>
+                    </form>
+                </section>
+                <section class="col personal-settings">11
+                    <h3>SETTINGS</h3>
+                    <div class="sets">
+                        <!-- <div class="preference">
+                            <label for="email-notifications">Send Email Notifications</label>
+                            <input type="checkbox" id="email-notifications" name="email-notifications">
+                        </div>
+                        <div class="2-preference">
+                            <label for="profile-settings">Set Profile to Public</label>
+                            <input type="checkbox" id="profile-settings" name="profile-settings">
+                        </div> -->
+                        <label class="switch-light switch-candy" onclick="">
+                            <input type="checkbox">
+                            <strong>
+                                Send Email Notifications
+                            </strong>
+                            <span>
+                                <span>Off</span>
+                                <span>On</span>
+                                <a></a>
+                            </span>
+                        </label>
+                        <label class="switch-light switch-candy" onclick="">
+                            <input type="checkbox">
+                            <strong>
+                                Set Profile to Public
+                            </strong>
+                            <span>
+                                <span>Off</span>
+                                <span>On</span>
+                                <a></a>
+                            </span>
+                        </label> 
+                        <select class="form-field" id="timezone">
+                            <option value="" disabled="" selected="">Select a Timezone</option>
+                            <option value="EST">EST</option>
+                            <option value="PST">PST</option>
+                            <option value="MNT">MNT</option>
+                        </select>
+                    </div>
+                    <div class="settings-bttn">
+                        <button class="save-bttn" type="submit">SAVE</button>
+                        <button type="submit" class="cancel-bttn">CANCEL</button>
+                    </div>
+                </section>  
+            </div>     
         </div>
-        <script src="js/jquery-3.4.1.min.js"></script>
+        <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <script src="js/app.js"></script>
     </body>
