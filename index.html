@@ -10,29 +10,101 @@
         <link href="css/toggle-switch.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
     </head>
-    <body class="grid-container">
-        <div class="container">
+    <body>
+        <div class="grid-container container">
             <div class="col notifications">1 
-                <!-- <h2><strong>Your</strong>App&trade;</h2> -->
                 <h2><strong>Your</strong>App&trade;</h2>
                 <div class="notification-bar">
                     <img src="icons/icon-bell.svg" alt="bell icon" class="bell-icon">
-                    <!-- <img src="images/member-1.jpg" alt="profile picture" class="profile-pic" /> -->
-                    <!-- <p>Josh Sullivan</p> -->
+                    <span id="alert-bell"></span>
                 </div>
                 <img src="images/member-1.jpg" alt="profile picture" class="profile-pic">
                 <p>Josh Sullivan</p>
             </div>
             <div class="col navigation">2
-                <a><img src="icons/icon-dashboard.svg" alt="dashboard icon" class="dashboard-img"></a>
-                <a><img src="icons/icon-members.svg" alt="members icon" class="members-img"></a>
-                <a><img src="icons/icon-visits.svg" alt="visits icon" class="visits-img"></a>
-                <a><img src="icons/icon-settings.svg" alt="settings icon" class="settings-img"></a>
+                <a  onclick="activeNavBttn()">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg  onclick="activeNavBttn()" class="dashboard-img nav-bttns" version="1.1" id="Line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#aaa;}
+                        </style>
+                        <g id="_x31_0_20_">
+                            <g>
+                                <path class="st0 nav-paths" d="M25,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,16.7,23.3,18,25,18z M24,14h2v2h-2V14z M25,26
+                                    c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,24.7,23.3,26,25,26z M24,22h2v2h-2V22z M17,26c1.7,0,3-1.3,3-3
+                                    c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,24.7,15.3,26,17,26z M16,22h2v2h-2V22z M28,0H6C3.8,0,2,1.8,2,4v24c0,2.2,1.8,4,4,4h22
+                                    c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V8h26V28z M30,6H4V4c0-1.1,0.9-2,2-2h22
+                                    c1.1,0,2,0.9,2,2V6z M17,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,16.7,15.3,18,17,18z M16,14h2v2h-2V14z M9,26
+                                    c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C6,24.7,7.3,26,9,26z M8,22h2v2H8V22z M9,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3
+                                    c-1.7,0-3,1.3-3,3C6,16.7,7.3,18,9,18z M8,14h2v2H8V14z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a  onclick="activeNavBttn()">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg  onclick="activeNavBttn()" class="members-img nav-bttns" version="1.1" id="Line_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#aaa;}
+                        </style>
+                        <g id="_x37__17_">
+                            <g>
+                                <path class="st0 nav-paths" d="M18,16.4c1.3-1.7,2-3.9,2-6.4c0-5.5-4-10-9-10C6,0,2,4.5,2,10c0,2.4,0.8,4.6,2,6.4c-2.3,0.8-4,3-4,5.6v4
+                                    c0,3.3,2.7,6,6,6h10c3.3,0,6-2.7,6-6v-4C22,19.4,20.3,17.2,18,16.4z M4,10c0-4.4,3.1-8,7-8c3.9,0,7,3.6,7,8s-3.1,8-7,8
+                                    C7.1,18,4,14.4,4,10z M20,25.5c0,2.5-2.2,4.5-4.9,4.5H6.9C4.2,30,2,28,2,25.5v-3c0-2.1,1.6-3.9,3.8-4.4C7.2,19.3,9,20,11,20
+                                    c2,0,3.8-0.7,5.2-1.9c2.2,0.5,3.8,2.2,3.8,4.4V25.5z M23,8h8c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1
+                                    C22,7.6,22.4,8,23,8z M31,24h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C32,24.4,31.6,24,31,24z M31,12h-8
+                                    c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C32,12.4,31.6,12,31,12z M31,18h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6
+                                    c0.6,0,1-0.4,1-1C32,18.4,31.6,18,31,18z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a  onclick="activeNavBttn()">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg  onclick="activeNavBttn()" class="visits-img nav-bttns" version="1.1" id="Line_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#aaa;}
+                        </style>
+                        <g id="_x35__10_">
+                            <g>
+                                <path class="st0 nav-paths" d="M14,0h-2c-1.1,0-2,0.9-2,2v28c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V2C16,0.9,15.1,0,14,0z M14,29
+                                    c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M4,9H2c-1.1,0-2,0.9-2,2v19c0,1.1,0.9,2,2,2h2
+                                    c1.1,0,2-0.9,2-2V11C6,9.9,5.1,9,4,9z M4,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V12c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M24,16h-2
+                                    c-1.1,0-2,0.9-2,2v12c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V18C26,16.9,25.1,16,24,16z M24,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V19
+                                    c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a>
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg class="settings-img nav-bttns" version="1.1" id="Line_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#aaa;}
+                        </style>
+                        <g id="_x32__16_">
+                            <g>
+                                <path class="st0 nav-paths" d="M26,24H14.9c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h1.1
+                                    c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,24.4,26.6,24,26,24z M11,27.4c-1.3,0-2.4-1.1-2.4-2.4
+                                    c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,26.3,12.3,27.4,11,27.4z M26,8H14.9c-0.4-1.7-2-3-3.9-3C9.1,5,7.6,6.3,7.1,8H6
+                                    C5.4,8,5,8.4,5,9c0,0.6,0.4,1,1,1h1.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,8.4,26.6,8,26,8z M11,11.4
+                                    c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,10.3,12.3,11.4,11,11.4z M26,16h-2.1
+                                    c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h10.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26
+                                    c0.6,0,1-0.4,1-1C27,16.4,26.6,16,26,16z M20,19.4c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4
+                                    C22.4,18.3,21.3,19.4,20,19.4z M28,0H4C1.8,0,0,1.8,0,4v24c0,2.2,1.8,4,4,4h24c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28
+                                    c0,1.1-0.9,2-2,2H4c-1.1,0-2-0.9-2-2V4c0-1.1,0.9-2,2-2h24c1.1,0,2,0.9,2,2V28z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
             </div>
             <div class="main">
                 <div class="col dashboard">3
                     <h2>Dashboard</h2>
-                    <!-- <input type="text" placeholder="Search"> -->
                     <div class="search">
                         <input type="text" placeholder="Search">
                     </div>
@@ -40,7 +112,6 @@
                         <p>Alert: Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <span class="close">X</span>
                     </div> -->
-
 
                     <!-- Insert Rental Map with Property picture to the right -->
                     <div id="alert2" class="alert2"></div>
@@ -57,7 +128,6 @@
                             <li class="trafic-nav-link">Monthly</li>
                         </ul>
                         <div class="widget-container-full">
-
                             <canvas id="traffic-chart" width="400" height="200"></canvas>
                         </div>
                     </div>
@@ -67,7 +137,6 @@
                         <h3>DAILY TRAFFIC</h3>
                         <!-- price of views over the past week -->
                         <div class="widget-container-half">
-                    
                             <canvas id="daily-chart" width="400" height="200"></canvas>
                         </div>
                     </div>
@@ -75,9 +144,7 @@
                 <section class="mobile">
                     <div class="col mobile-users">6
                         <h3>MOBILE USERS</h3>
-
                         <div class="widget-container-half">
-
                             <canvas id="mobile-chart" width="400" height="200"></canvas>
                         </div>
                     </div>
@@ -146,14 +213,6 @@
                     <h3>NEW MEMBERS</h3>
                     <!-- Real estate agents -->
                     <div class="activity">
-                        <!-- <div class="contact-img">
-                        <img src="images/member-1.jpg" alt="first new member" class="first-member">
-                        <div class="contact-info">
-                            <h4>Victoria Chambers</h4>
-                            <p>victoria.chambers80@example.com</p>
-                        </div>  
-                        <p class="date">10/15/15</p>
-                        </div> -->
                         <div class="contact-img">
                             <img src="images/member-1.jpg" alt="first new member" class="first-member">
                             <div class="contact-info">
@@ -162,14 +221,6 @@
                             </div>  
                             <p class="date">10/15/15</p>
                         </div>
-                        <!-- <div class="contact-img">
-                            <img src="images/member-2.jpg" alt="second new member" class="second-member">
-                            <div class="contact-info">
-                            <h4>Dale Byrd</h4>
-                            <p>dale.byrd52@example.com</p>
-                            </div>
-                            <p class="date">10/15/15</p>
-                        </div> -->
                         <div class="contact-img">
                             <img src="images/member-2.jpg" alt="second new member" class="second-member">
                             <div class="contact-info">
@@ -178,14 +229,6 @@
                             </div>
                             <p class="date">10/15/15</p>
                         </div>
-                        <!-- <div class="contact-img">
-                            <img src="images/member-3.jpg" alt="third new member" class="third-member">
-                            <div class="contact-info">
-                            <h4>Dawn Wood</h4>
-                            <p>dawn.wood16@example.com</p>
-                            </div>
-                            <p class="date">10/15/15</p>
-                        </div> -->
                         <div class="contact-img">
                             <img src="images/member-3.jpg" alt="third new member" class="third-member">
                             <div class="contact-info">
@@ -194,15 +237,6 @@
                             </div>
                             <p class="date">10/15/15</p>
                         </div>
-                        <!-- <div class="contact-img">
-                            <img src="images/member-4.jpg" alt="fourth new member" class="fourth-member">
-                            <div class="contact-info">
-                            <h4>Dan Oliver</h4>
-                            <p>dan.oliver82@example.com</p>
-                            </div>
-                            <p class="date">10/15/15</p>
-                            </div>
-                        </div> -->
                         <div class="contact-img">
                             <img src="images/member-4.jpg" alt="fourth new member" class="fourth-member">
                             <div class="contact-info">
@@ -263,15 +297,7 @@
                 <section class="col personal-settings">11
                     <h3>SETTINGS</h3>
                     <div class="sets">
-                        <!-- <div class="preference">
-                            <label for="email-notifications">Send Email Notifications</label>
-                            <input type="checkbox" id="email-notifications" name="email-notifications">
-                        </div>
-                        <div class="2-preference">
-                            <label for="profile-settings">Set Profile to Public</label>
-                            <input type="checkbox" id="profile-settings" name="profile-settings">
-                        </div> -->
-                        <label class="switch-light switch-candy" onclick="">
+                        <label class="switch-light switch-material" onclick="">
                             <input type="checkbox">
                             <strong>
                                 Send Email Notifications
@@ -282,7 +308,7 @@
                                 <a></a>
                             </span>
                         </label>
-                        <label class="switch-light switch-candy" onclick="">
+                        <label class="switch-light switch-material" onclick="">
                             <input type="checkbox">
                             <strong>
                                 Set Profile to Public
@@ -307,10 +333,16 @@
                 </section>  
             </div>     
         </div>
-        <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
+
+<!-- 
+1) adding click event when clicked making svg lighter (how do I add a class to an item. Having an issue, ask on slack.)
+2) Style the graphs. Adding a labeled legend. 
+3) Adding a green notification dot
+4) weekly/monthly/daily button active styles (also add event handler)
+-->
 
 

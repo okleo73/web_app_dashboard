@@ -97,6 +97,8 @@ Dashboard section
 .dashboard-img, .members-img, .visits-img, .settings-img {
     width: 9%;
     margin: 15px 7%;
+    max-width: 80px;
+    min-width: 50px;
 }
 .navigation {
     background-color: lightslategray;
@@ -136,6 +138,8 @@ Notification Section
     width: 65px;
     margin-right: 21px;
     border-right: solid thin;
+    min-width: 50px;
+    max-width: 80px;
 }
 .notifications img {
     margin-right: 20px;
@@ -154,6 +158,7 @@ New Member section/Recent activity section
     /* width: 10%; */
     width: 65px;
     border-radius: 50%;
+    min-width: 50px;
 }
 .new-members h6 {
     margin: 0;
@@ -174,6 +179,7 @@ New Member section/Recent activity section
 }
 .activity .fourth-member, .second-member, .third-member, .first-member {
     margin: 10px 15px;
+    min-width: 50px;
 }
 .date {
     margin-left: auto;
@@ -254,20 +260,50 @@ SVG Icons
     align-self: center;
     margin: 7px;
 }
+.contact-img p {
+    margin-left: auto;
+}
+.alert-banner {
+    background-color: beige;
+    width: 90%;
+    margin: 10px auto 0;
+    border-radius: 11px;
+}
+.trafic-nav-link {
+    display: inline-block;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding: 5px;
+    color: lightseagreen;
+}
+.trafic-nav {
+    list-style: none;
+    display: inline-block;
+}
+span {
+    margin: 10px;
+}
+.alert-banner p {
+    display: inline-block;
+}
+/* when nav button is active. Not in css yet */
+.active-nav-bttn {
+    fill: #fff;
+}
 
 @media(min-width: 768px) {
     .grid-container {
-        /* grid-template-columns: 55px 1fr; */
-        grid-template-columns: 1fr;
-        /* grid-template-areas: 
+        grid-template-areas:
             "header header"
-            "navigation main"; */
+            "navigation main"
+            "navigation main";
+        grid-template-columns: 100px 1fr;
     }
     .main {
         display: grid;
         grid-template-columns: 1fr;
     }
-    .general-traffic, .social-stats {
+    .traffic, .social-stats, .dashboard {
         grid-column: 1 / span 2;
     }
     .daily, .new-members, .message-user {
@@ -281,12 +317,6 @@ SVG Icons
     }
     .widget-container-half {
         width: 45vw;
-    }
-    .grid-container {
-        grid-template-areas:
-            "header header"
-            "navigation main"
-            "navigation";
     }
 }
 

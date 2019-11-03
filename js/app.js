@@ -26,6 +26,20 @@ sendBttn.addEventListener('click', () => {
     }
 });
 
+
+//Not working. Suppose to add class to active navigation
+// let navBtn = document.querySelector('.nav-bttns');
+// navBtn.addEventListener('click', (event) => {
+//     let navPath = document.querySelector('.nav-paths');
+//     // let nav = e.target;
+//     navPath.classList.add("active-nav-bttn");
+// });
+const activeNavBttn = () => {
+    let navPath = document.querySelector('.nav-paths');
+    navPath.classList.add("active-nav-bttn");
+}
+
+
 var ctx = document.getElementById('traffic-chart');
 var ctx2 = document.getElementById('daily-chart');
 var ctx3 = document.getElementById('mobile-chart');
