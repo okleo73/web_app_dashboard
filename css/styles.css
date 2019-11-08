@@ -48,6 +48,7 @@ Message User Section
     border: none;
     border-radius: 4px;
     padding: 6px;
+    border: solid thin;
 }
 #messages {
     display: block;
@@ -56,27 +57,36 @@ Message User Section
     border-radius: 4px;
     border: none;
     padding: 3px;
+    height: 146px;
+    border: solid thin;
 }
 .send-bttn {
     width: 85%;
     margin: 0px auto;
     display: block;
-    background-color:#4696F1;
+    /* background-color:#4696F1; */
     color: white;
     border-radius: 7px;
-    border-color: #4696F1;
+    /* border-color: #4696F1; */
     padding: 10px;
+    transition: 1s;
+    background-color: #B6B7D8;
+    border:none;
+}
+.send-bttn:hover {
+    background-color: #7477bf;
 }
 /*=============
 Dashboard section
 =============*/
 .dashboard input {
     width: 98%;
-    margin: 0 auto;
+    margin: 25px auto;
     display: block;
     border-radius: 7px;
     border: none;
     padding: 7px;
+    background-color: gainsboro;
 }
 .dashboard h3 {
     text-align: center;
@@ -101,48 +111,54 @@ Dashboard section
     min-width: 50px;
 }
 .navigation {
-    background-color: lightslategray;
+    background-color: #4d4c72;
 }
 .notifications {
-    background-color: #4696F1;
+    background-color: #7477bf;
 }
 .dashboard, .general-traffic, .daily-traffic, .mobile-users, .social-stats, .new-members, .recent-activity, .message-user, .personal-settings {
-    background-color: slategray;
+    background-color: white;
 }
 .alert p {
-    background-color:  #4696F1;
+    background-color:  #7477bf;
     margin: 12px;
     border-radius: 5px;
     padding: 10px;
-}
-.message-user, 
+} 
 .recent-activity,
 .new-members {
-    border: solid thin;
+    /* border: solid thin;
     border-left: none;
-    border-right: none;
+    border-right: none; */
     padding: 13px;
 }
 /*=============
 Notification Section
 =============*/
 .notifications {
-    background-color: #4696F1;
+    background-color:#7477bf;
     display: flex;
     align-items: center;
 }
 .notifications h2 {
     margin-right: auto;
+    color: white;
+    margin-left: 10px;
+}
+.notifications p {
+    color: white;
+    padding-right: 10px;
+    margin-right: 10px;
 }
 .notification-bar {
     width: 65px;
-    margin-right: 21px;
-    border-right: solid thin;
+    /* margin-right: 21px;
+    border-right: solid thin; */
     min-width: 50px;
     max-width: 80px;
 }
 .notifications img {
-    margin-right: 20px;
+    margin-right: 11px;
 }
 /*=============
 New Member section/Recent activity section
@@ -153,6 +169,7 @@ New Member section/Recent activity section
 .recent-activity img {
     border-radius: 50%;
     margin: 10px 15px;
+    height: 128px;
 }
 .profile-pic {
     /* width: 10%; */
@@ -170,7 +187,12 @@ New Member section/Recent activity section
     /*! justify-content: space-evenly; */
     /*! margin: 44px 0; */
     width: 100%;
-    border-bottom: solid thin;
+    /* border-bottom: solid thin; */
+    background-color:#fbfbfb;
+    border-radius: 13px;
+    margin: 3px;
+    border: solid thin #d1d1d1;
+    color: grey;
 }
 .activity {
     display: flex;
@@ -205,18 +227,36 @@ select {
     border: none;
     border-radius: 7px;
 }
+.stats {
+    color: grey;
+}
 .sets {
     /*! display: flex; */
     /*! flex-direction: column; */
     /*! align-items: initial; */
-    margin: 2px 9%;
-    width: 91%;
+    /* margin: 2px 9%;
+    width: 91%; */
+    background-color: #fbfbfb;
+    border: solid thin #d1d1d1;
+    margin: 3px 15px;
+    color: grey;
+    padding: 10px;
+    border-radius: 10px;
 }
 .cancel-bttn {
+    transition: 1s;
+    background-color: #A2A0A0;
+}
+.cancel-bttn:hover {
     background-color: grey;
 }
 .save-bttn {
-    background-color: #4696F1;
+    /* background-color: #4696F1; */
+    transition: 1s;
+    background-color: #B6B7D8;
+}
+.save-bttn:hover {
+    background-color: #7477bf;
 }
 
 /*=========
@@ -225,7 +265,7 @@ SVG Icons
 .social-stats {
     display: flex;
     flex-direction: column;
-    border-top: solid thin;
+    /* border-top: solid thin; */
 }
 /* .twitter-icon {
     max-height: 30px;
@@ -233,24 +273,21 @@ SVG Icons
 .icons{
     max-height: 30px;
 }
-/* .google-icon {
-    width: 20%;
-} */
 .cards {
     display: flex;
-    border: solid thin;
+    border: solid thin #d1d1d1;
     width: 80%;
     margin: 6px auto;
-    background-color: antiquewhite; 
+    background-color: #fbfbfb; 
     border-radius: 10px;
 }
 .social-stats {
     display: flex;
     flex-direction: column;
-    border-top: solid thin;
+    /* border-top: solid thin; */
 }
 .social-img {
-    background-color: slategrey;
+    background-color: #7477bf;
     display: flex;
     width: 70px;
     height: 70px;
@@ -262,19 +299,27 @@ SVG Icons
 }
 .contact-img p {
     margin-left: auto;
+    color: grey;
 }
 .alert-banner {
-    background-color: beige;
+    background-color: #7477bf;
     width: 90%;
     margin: 10px auto 0;
     border-radius: 11px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
 }
-.trafic-nav-link {
+.trafic-nav li {
     display: inline-block;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     border-radius: 8px;
     padding: 5px;
-    color: lightseagreen;
+    /* color: lightseagreen; */
+    color: grey;
+}
+.trafic-nav li:hover {
+    background-color: #98CF5E;
+    color:white;
 }
 .trafic-nav {
     list-style: none;
@@ -285,11 +330,95 @@ span {
 }
 .alert-banner p {
     display: inline-block;
+    color: white;
+    padding-left: 11px;
 }
 /* when nav button is active. Not in css yet */
 .active-nav-bttn {
     fill: #fff;
 }
+/* full screen green dot */
+/* #alert-bell {
+    background-color: greenyellow;
+    position: absolute;
+    height: 10px;
+    width: 11px;
+    border-radius: 80px;
+    right: 243px;
+    bottom: 163px;
+} */
+.active {
+    display: inline-block;
+    background-color: #98CF5E;
+    border-radius: 8px;
+    padding: 5px;
+    color:white;
+}
+.alert-bell-close {
+    margin: 20px auto;
+}
+.last-member {
+    /* border-bottom: none; */
+}
+h4, h3, h2 {
+    margin: 0;
+    color: grey;
+}
+.dashboard h2 {
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 10px;
+}
+.general-traffic, .daily-traffic, .mobile-users {
+    padding: 21px;
+    /* border: solid thin #d1d1d1;
+    border-radius: 11px;
+    background-color: #fbfbfb; */
+}
+.widget-container-full,
+.widget-container-half {
+    border: solid thin #d1d1d1;
+    border-radius: 11px;
+    background-color: #fbfbfb;
+}
+.personal-settings h3,
+.message-user h3 {
+    padding: 20px;
+}
+.widget-container {
+    padding-bottom: 15px;
+}
+.personal-settings {
+    /* border-top: solid thin; */
+}
+.navigation .dashboard-img {
+    /* border-bottom: solid 
+    white; */
+}
+.st1 {
+    fill: #fff;
+}
+.rcnt-act {
+    margin: 0;
+}
+.bell-icon{
+    transition: width 1s, height 1s, transform 1s;
+}
+.bell-icon:hover {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+}
+.widget-container {
+    /* padding-bottom: 0; */
+    background-color: #fbfbfb;
+    padding-top: 13px;
+    margin: 3px 15px;
+    border-radius: 17px;
+    padding-bottom: 13px;
+    border: solid thin #d1d1d1;
+}
+
+/* 1117px */
 
 @media(min-width: 768px) {
     .grid-container {
@@ -317,6 +446,67 @@ span {
     }
     .widget-container-half {
         width: 45vw;
+    }
+    #alert-bell {
+        right: 132px;
+    }
+    .dashboard h2 {
+        text-align: inherit;
+        padding-top: 0;
+    }
+    .general-traffic, .daily-traffic, .mobile-users {
+        padding: 0;
+    }
+    .widget-container {
+        padding-bottom: 0;
+    }
+    .dashboard {
+        grid-template-columns: 1fr 50px 1fr;
+        grid-template-rows: 1fr 50px 1fr;
+        display: grid;
+    }
+    .dashboard h2 {
+        display: inline;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        padding-top: 35px;
+        padding-left: 1xs8px;
+    }
+    #alert2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .search {
+        grid-column-start: 3;
+        grid-row-start: 1;
+    }
+    .general-traffic,
+    .daily-traffic,
+    .mobile-users {
+        padding: 20px 21px;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation a {
+        display: flex;
+        justify-content: center;
+    }
+    .personal-settings {
+        border-top: none;
+    }
+    .navigation .dashboard-img {
+        /* border-left: solid white;
+        border-bottom: none; */
+    }
+    .social-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .cards {
+        margin: 25px;
     }
 }
 
