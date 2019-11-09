@@ -51,7 +51,7 @@ sendBttn.addEventListener('click', () => {
 // });
 const activeNavBttn = () => {
     let navPath = document.querySelector('.nav-paths');
-    navPath.classList.add("active-nav-bttn");
+    // navPath.classList.add("active-nav-bttn");
 }
 //End of Navigation button section
 
@@ -74,17 +74,17 @@ var myChart = new Chart(ctx, {
                 'rgba(116, 119, 191, 1)'
             ],
             borderWidth: 2,
-            lineTension: 0 
+            lineTension: 0, //??
         }]
     },
-    // tooltips: {    
+    // tooltips: {    //???
     //     callbacks: {
     //         label: function (tooltipItems, data) {
     //             return '$' +tooltipItems.yLabel;
     //         }
     //     }
     // },
-    // responsive: true, 
+    // responsive: true,   //????
     // scale: {
     //     yAxes: [{
     //         ticks: {
@@ -93,10 +93,10 @@ var myChart = new Chart(ctx, {
     //                 return '$' + value;
     //             },
     //             autoSkip: true,
-    //             maxTicksLimit: 8
+    //             maxTicksLimit: 8,
     //         }
     //     }]
-    // }
+    // },
     options: {
         scales: {
             yAxes: [{
@@ -108,7 +108,7 @@ var myChart = new Chart(ctx, {
     }
 });
 
-//Event listener for when a buttons are clicked
+//Event listener for when buttons are clicked
 // let lineGraphNav = document.querySelector('.trafic-nav');
 // let lineGraphLI = lineGraphNav.childNodes;
 // lineGraphNav.addEventListener('click', (e) => {
@@ -165,7 +165,7 @@ var myChart2 = new Chart(ctx2, {
                 "#7477bf",
             ],
             borderColor: [
-                
+                'rgba(116, 119, 191, 1)'
             ],
             borderWidth: 1
         }]
@@ -193,7 +193,14 @@ var myChart3 = new Chart(ctx3, {
                 '#78CF82',
                 '#51B6C8'
             ],
-            borderColor: [ ],
+            borderColor: [
+                // 'rgba(255, 99, 132, 1)',
+                // 'rgba(54, 162, 235, 1)',
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)'
+            ],
             borderWidth: 1
         }]
     },
