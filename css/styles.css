@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-	font-size: 1.4em;
+	/* font-size: 1.4em; */
 	font-family: 'Varela Round', sans-serif;
     padding: 0;
     margin: 0;
@@ -54,7 +54,7 @@ Message User Section
     border-radius: 4px;
     border: none;
     padding: 3px;
-    height: 146px;
+    height: 100px;
     border: solid thin;
 }
 .send-bttn {
@@ -155,7 +155,8 @@ New Member section/Recent activity section
 .recent-activity img {
     border-radius: 50%;
     margin: 10px 15px;
-    height: 128px;
+    /* height: 128px; */
+    width: 50px;
 }
 .profile-pic {
     /* width: 10%; */
@@ -177,6 +178,7 @@ New Member section/Recent activity section
     margin: 3px;
     border: solid thin #d1d1d1;
     color: grey;
+    flex-wrap: wrap;
 }
 .activity {
     display: flex;
@@ -185,7 +187,8 @@ New Member section/Recent activity section
 }
 .activity .fourth-member, .second-member, .third-member, .first-member {
     margin: 10px 15px;
-    min-width: 50px;
+    /* min-width: 50px; */
+    width: 50px;
 }
 .date {
     margin-left: auto;
@@ -323,7 +326,7 @@ h4, h3, h2 {
     margin-left: 10px;
 }
 .general-traffic, .daily-traffic, .mobile-users {
-    padding: 21px;
+    /* padding: 21px; */
 }
 .widget-container-full,
 .widget-container-half {
@@ -360,6 +363,23 @@ h4, h3, h2 {
     padding-bottom: 13px;
     border: solid thin #d1d1d1;
 }
+.daily-traffic h3 {
+
+    padding-top: 4%;
+    padding-bottom: 2%;
+
+}
+.mobile-users h3 {
+
+    padding-top: 4%;
+    padding-bottom: 2%;
+
+}
+.general-traffic h3 {
+
+    padding-top: 3%;
+
+}
 
 /* 1117px */
 
@@ -385,10 +405,12 @@ h4, h3, h2 {
         grid-column: 2 / span 1;
     }
     .widget-container-full {
-        width: 90vw;
+        /* width: 90vw; */
+        width: 85vw;
     }
     .widget-container-half {
-        width: 45vw;
+        /* width: 45vw; */
+        width: 43vw;
     }
     #alert-bell {
         right: 132px;
@@ -400,9 +422,9 @@ h4, h3, h2 {
     .general-traffic, .daily-traffic, .mobile-users {
         padding: 0;
     }
-    .widget-container {
+    /* .widget-container {
         padding-bottom: 0;
-    }
+    } contact form container*/
     .dashboard {
         grid-template-columns: 1fr 50px 1fr;
         grid-template-rows: 1fr 50px 1fr;
@@ -426,7 +448,8 @@ h4, h3, h2 {
     .general-traffic,
     .daily-traffic,
     .mobile-users {
-        padding: 20px 21px;
+        /* padding: 20px 21px; */
+        margin-left: 2%;
     }
     .navigation {
         display: flex;
@@ -446,6 +469,11 @@ h4, h3, h2 {
     }
     .cards {
         margin: 25px;
+    }
+    .general-traffic h3 {
+
+        padding-top: 0;
+    
     }
 }
 
